@@ -1,0 +1,21 @@
+<section id ="add">
+  <form action ="/" method="post">
+    <textarea name="name" placeholder="Name"></textarea>
+    <textarea name="description" placeholder ="Description"></textarea>
+    <input type ="submit" value="Add List!">
+  </form>
+</section>
+
+<% @lists.each do |list| %>
+  <article <%= 'class="complete"' if list.complete == 1 %>>
+    <p>
+      <h3><%= list.name %></h3>
+      <%= list.description %>
+      <span><a href="/<%= list.id %>">[edit]</a></span>
+    </p>
+    <p class="links">
+      <a href="/<%= list.id %>/complete">&#8623;</a>
+    </p>
+    <p class="meta">Created: <%= list.created_at %></p>
+  </article>
+<% end %>
