@@ -9,7 +9,7 @@
 <% @lists.each do |list| %>
   <article <%= 'class="complete"' if list.complete == 1 %>>
     <p>
-      <h3><%= list.name %></h3>
+      <a href="/<%= list.id %>/display"><h3><%= list.name %></h3></a>
       <%= list.description %>
       <span><a href="/<%= list.id %>">[edit]</a></span>
     </p>
