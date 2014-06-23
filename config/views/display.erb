@@ -1,0 +1,14 @@
+<h2><%= @title %></h2>
+<% @tasks.each do |task| %>
+  <article <%= 'class="complete"' if task.complete == 1 %>>
+    <p>
+      <h3><%= task.name %></h3>
+      <%= task.description %>
+      <span><a href="/<%= @list.id %>/display/<%= task.id %>">[edit]</a></span>
+    </p>
+    <p class="links">
+      <a href="/<%= task.id %>/complete">&#8623;</a>
+    </p>
+    <p class="meta">Created: <%= task.created_at %></p>
+  </article>
+<% end %>

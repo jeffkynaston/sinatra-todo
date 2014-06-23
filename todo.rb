@@ -83,3 +83,18 @@ get '/:id/complete' do
   n.save
   redirect '/'
 end
+
+get '/:id/display' do
+  @tasks = Tasks.where(list_id: params[:id])
+  @list = Lists.find params[:id]
+  @current_list = Lists.find params[:id]
+  @title = "Showing All Tasks From #{@current_list.name}"
+  erb :display
+end
+
+get '/:list_id/display/:task_id' do
+  @list = Lists.find params[:list_id]
+  @task = Tasks.find params[:task_id]
+  @title = "Edit List ##{params[:list_id]}, Task ##{params[:task_id]}"
+  erb :edit_task
+end
