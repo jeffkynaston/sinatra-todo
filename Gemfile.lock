@@ -20,6 +20,8 @@ GEM
     i18n (0.6.1)
     multi_json (1.6.1)
     rack (1.5.2)
+    rack-flash (0.1.2)
+      rack
     rack-protection (1.5.3)
       rack
     rspec (2.12.0)
@@ -36,6 +38,8 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
+    sinatra-redirect-with-flash (0.2.1)
+      sinatra (>= 1.0.0)
     sqlite3 (1.3.7)
     tilt (1.4.1)
     tzinfo (0.3.35)
@@ -46,7 +50,9 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   faker
+  rack-flash
   rspec
   shotgun
   sinatra
+  sinatra-redirect-with-flash
   sqlite3

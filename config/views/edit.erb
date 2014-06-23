@@ -1,0 +1,11 @@
+<% if @list %>
+  <form action="/<%= @list.id %>" method="post" id="edit">
+    <input type="hidden" name="_method" value="put">
+    <textarea name="description"><%= @list.description  %></textarea>
+    <input type="checkbox" name="complete" <% "checked" if @list.complete == 1 %>>
+    <input type="submit">
+  </form>
+  <p><a href="/<%= @list.id %>/delete">Delete</a></p>
+<% else %>
+  <p>Note not found.</p>
+    <% end %>

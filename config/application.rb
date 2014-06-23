@@ -4,6 +4,9 @@ require 'active_record'
 require 'logger'
 require 'pp'
 require 'sinatra'
+# require 'sinatra/flash'
+
+enable :sessions
 
 APP_ROOT = Pathname.new(File.expand_path(File.join(File.dirname(__FILE__), '..')))
 
